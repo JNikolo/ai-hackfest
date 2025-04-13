@@ -19,8 +19,10 @@
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/bottom-tabs": "^7.2.0",
     "@react-navigation/native": "^7.0.14",
+    "@tamagui/animations-moti": "^1.125.34",
     "@tamagui/babel-plugin": "^1.125.34",
     "@tamagui/config": "^1.125.34",
+    "@tamagui/linear-gradient": "^1.125.34",
     "@tamagui/metro-plugin": "^1.125.34",
     "expo": "~52.0.43",
     "expo-blur": "~14.0.3",
@@ -43,7 +45,8 @@
     "react-native-screens": "~4.4.0",
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.5",
-    "tamagui": "^1.125.34"
+    "tamagui": "^1.125.34",
+    "expo-linear-gradient": "~14.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
