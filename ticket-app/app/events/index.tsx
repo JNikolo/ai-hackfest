@@ -18,9 +18,13 @@ const dummyEvents = [
   { id: 2, name: "Tech Conference 2025", location: "Brooklyn" },
   { id: 3, name: "Open Mic Poetry", location: "Queens" },
   { id: 4, name: "Food Festival", location: "Bronx" },
-  { id: 5, name: "Startup Meetup", location: "Downtown" },
+  { id: 5, name: "WWE Wrestlemania", location: "Las Vegas" },
 ];
-
+const dummySimilarEvents = [
+  { id: 6, name: "Night of Soulful Sounds", location: "Harlem" },
+  { id: 7, name: "AI & Future Tech Meetup", location: "Brooklyn Navy Yard" },
+  { id: 8, name: "Indie Film Screening", location: "Astoria" },
+];
 export default function SearchPage() {
   const [query, setQuery] = useState("");
   const [useSemantic, setUseSemantic] = useState(false);
@@ -34,22 +38,17 @@ export default function SearchPage() {
   // 🔍 Semantic similarity search
   const fetchSimilarEvents = async (text: string) => {
     setLoading(true);
-    try {
-      const response = await fetch("https://your-api.com/semantic-search", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ query: text }),
-      });
-      const data = await response.json();
-      setSimilarEvents(data.events || []);
-    } catch (err) {
-      console.error("Semantic search error:", err);
-      setSimilarEvents([]);
-    } finally {
+
+    // Simulate delay and fuzzy match from dummySimilarEvents
+    setTimeout(() => {
+      const results = dummySimilarEvents.filter((event) =>
+        event.name.toLowerCase().includes(text.toLowerCase())
+      );
+
+      // If no match, just return all to simulate vector similarity
+      setSimilarEvents(results.length > 0 ? results : dummySimilarEvents);
       setLoading(false);
-    }
+    }, 800); // 0.8s simulated delay
   };
 
   useEffect(() => {

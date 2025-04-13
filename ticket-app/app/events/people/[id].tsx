@@ -23,7 +23,7 @@ const dummyBuddies: Buddy[] = [
   {
     id: "1",
     name: "Lena",
-    bio: "Looking for a jazz fan to vibe with 🎷",
+    bio: "Looking for a Cena fan to share a drink with!",
     profilePicture: "https://randomuser.me/api/portraits/women/44.jpg",
     distance: 0.8,
   },
@@ -37,7 +37,7 @@ const dummyBuddies: Buddy[] = [
   {
     id: "3",
     name: "Priya",
-    bio: "Bringing snacks! Let’s meet up 🍿",
+    bio: "I'm a huge fan of the WWE and CMPunk!",
     profilePicture: "https://randomuser.me/api/portraits/women/68.jpg",
     distance: 1.1,
   },

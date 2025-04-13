@@ -41,10 +41,10 @@ export default function EventPage() {
       try {
         const eventDummy: Event = {
           id: "1",
-          name: "Sample Event",
-          location: "New York",
-          description: "This is a sample event description.",
-          date: "2025-10-01",
+          name: "WWE Wrestlemania",
+          location: "Las Vegas",
+          description: "The biggest wrestling event in the world.",
+          date: "2025-05-19",
         };
         setEvent(eventDummy);
       } catch (err) {
