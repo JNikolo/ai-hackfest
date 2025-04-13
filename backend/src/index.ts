@@ -1,21 +1,15 @@
 import express from "express";
 import { connectToDatabase } from "./db";
+import { userRouter } from "./routes/userRoutes";
+import { eventRouter } from "./routes/eventRoutes";
+import { eventRegistrationRouter } from "./routes/eventRegistrationRoutes";
 
 const app = express();
 app.use(express.json()); // Middleware to parse JSON request bodies
 
-app.get("/", async (req, res) => {
-  const db = await connectToDatabase();
-  const users = await db.collection("users").find().toArray();
-  res.json(users);
-});
-
-app.post("/users", async (req, res) => {
-  const db = await connectToDatabase();
-  const newUser = req.body; // Assuming the user data is sent in the request body
-  await db.collection("users").insertOne(newUser);
-  res.status(201).json(newUser);
-});
+app.use("/api/users", userRouter); // Use the user router for all /api/users routes
+app.use("/api/events", eventRouter); // Use the event router for all /api/events routes
+app.use("/api/event-registrations", eventRegistrationRouter); // Use the event registration router for all /api/event-registrations routes
 
 const PORT = 3000;
 app.listen(PORT, () => {
